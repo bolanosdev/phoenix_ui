@@ -1,11 +1,11 @@
 {
   "name": "@phoenix_ui/react-text",
-  "version": "1.0.11",
+  "version": "1.0.0",
   "main": "src/index.ts",
   "scripts": {
     "lint": "eslint src/**/*.ts",
     "test": "bun test",
-    "patch": "./scripts/patch.js patch"
+    "publish": "scripty"
   },
   "dependencies": {
     "react": "^18"

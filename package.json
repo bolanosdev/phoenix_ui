@@ -1,10 +1,10 @@
 {
   "name": "@phoenix_ui/storybook",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "lint": "nx affected -t lint",
     "test": "nx affected -t test",
-    "patch": "nx affected -t patch",
+    "publish": "nx affected -t publish",
     "dev": "storybook dev -p 6006",
     "build": "storybook build"
   },

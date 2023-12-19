@@ -1,5 +1,5 @@
 import React from 'react'
 
 export const Button: React.FC = () => {
-  return <></>
+  return <button>I am a button</button>
 }
