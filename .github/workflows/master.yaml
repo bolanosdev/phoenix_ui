@@ -16,18 +16,6 @@ jobs:
         with:
           bun-version: "latest"
       - run: bun i
-      #- run: git config --global user.email "bolanosDev-ci@github.com"
-      #- run: git config --global user.name "BolanosDev ci"
-      #- run: echo "//registry.npmjs.org/:_authToken=$NPM_AUTH_TOKEN" >.npmrc
-      #- run: echo "@phoenix_ui:registry=https://registry.npmjs.org/" >>.npmrc
-      #- run: echo "always-auth=true" >>.npmrc
-      #- run: cat .npmrc
       - run: git reset --hard
-      - run: bun run patch
-      #- run: ls -la
-      #- run: git status
-      #- run: lerna version patch --no-git-tag-version -y
-      #- run: git add . && git commit -m "bump versions"
-      #- run: lerna publish from-package -y
-      #- run: ls -la
-      #- run: git status
+      - run: git branch --track main origin/main
+      - run: bun run publish
