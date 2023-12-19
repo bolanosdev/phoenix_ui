@@ -1,20 +1,35 @@
-name: Master
+name: release
 
 on:
   push:
     branches:
       - main
 
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+permissions: {}
 jobs:
-  publish:
+  release:
+    permissions:
+      contents: write # to create release (changesets/action)
+      issues: write # to post issue comments (changesets/action)
+      pull-requests: write # to create pull request (changesets/action)
+    timeout-minutes: 20
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+      - uses: actions/checkout@v3
       - uses: oven-sh/setup-bun@v1
         with:
           bun-version: "latest"
       - run: bun i
-      - run: git reset --hard
-      - run: bun run publish
+
+      - name: Create Release Pull Request or Publish to npm
+        uses: changesets/action@v1
+        with:
+          publish: bun run release
+          version: bun run version
+          commit: "chore: new release"
+          title: "chore: new release candidate"
+        env:
+          GITHUB_TOKEN: ${{ secrets.BDEV_GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
