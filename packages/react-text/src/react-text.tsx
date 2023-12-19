@@ -4,7 +4,7 @@ interface TextProps {
   text: string
 }
 export const Text: React.FC<TextProps> = ({ text }) => (
-  <span id="react-text" className="text">
+  <span id="react-text-updated" className="text">
     {text}
   </span>
 )
