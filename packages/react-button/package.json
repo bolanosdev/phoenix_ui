@@ -1,6 +1,6 @@
 {
   "name": "@phoenix_ui/react-button",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "main": "src/index.ts",
   "scripts": {
     "lint": "eslint src/**/*.ts",
@@ -9,6 +9,9 @@
   },
   "dependencies": {
     "react": "^18"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "devDependencies": {
     "@happy-dom/global-registrator": "^12.10.3",
