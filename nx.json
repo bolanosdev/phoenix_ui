@@ -1,0 +1,10 @@
+{
+  "targetDefaults": {
+    "test": {
+      "cache": true
+    },
+    "lint": {
+      "cache": true
+    }
+  }
+}
