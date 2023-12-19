@@ -1,6 +1,6 @@
 {
   "name": "@phoenix_ui/react-button",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "src/index.ts",
   "scripts": {
     "lint": "eslint src/**/*.ts",
