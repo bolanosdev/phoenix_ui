@@ -1,0 +1,13 @@
+{
+  "version": "1.0.1",
+  "name": "generator-phoenix-ui-react-component",
+  "description": "yeoman generator to create phoenix_ui react components",
+  "author": "carlos bolanos",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {},
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "yeoman-generator": "^7.1.1"
+  }
+}
