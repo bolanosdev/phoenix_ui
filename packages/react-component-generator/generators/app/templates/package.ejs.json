@@ -1,16 +1,16 @@
 {
-  "name": "@phoenix_ui/react-button",
-  "version": "1.0.3",
+  "name": "@phoenix_ui/react-<%=componentName%>",
+  "version": "1.0.0",
   "main": "src/index.ts",
   "scripts": {
     "lint": "scripty",
     "test": "scripty"
   },
-  "dependencies": {
-    "react": "^18"
-  },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "react": "^18"
   },
   "config": {
     "scripty": {
