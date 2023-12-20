@@ -5,8 +5,9 @@ import { render } from '@testing-library/react'
 describe('Text tests', () => {
   test('shoud compile Text', () => {
     const text = 'hello world'
-    const { container } = render(<Text text={text} />)
+    const { container, debug } = render(<Text text={text} />)
 
+    debug()
     const data = container.querySelector('span')
     expect(data?.innerHTML).toEqual('hello world')
   })
