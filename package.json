@@ -37,6 +37,7 @@
     "@types/node": "^20.10.5",
     "@typescript-eslint/parser": "^6.15.0",
     "autoprefixer": "^10.4.16",
+    "cssnano": "^6.0.2",
     "eslint-config-prettier": "^9.1.0",
     "nx": "^17.2.6",
     "postcss-import": "^15.1.0",
