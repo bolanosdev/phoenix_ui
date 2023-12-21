@@ -1,8 +1,7 @@
 import { describe, test, expect } from "bun:test";
-import { getClassByViewPort } from "../responsive.utils";
-import type { ClassByResponsiveProps } from "../responsive.utils";
+import { getClassByViewPort, type ClassByResponsiveProps } from "../utils";
 
-describe("responsive.utils.align", () => {
+describe("react-base-component.props.text-align", () => {
   test(`:text-alignment`, () => {
     const align = "text-left";
     const properties: ClassByResponsiveProps = { align };
@@ -10,4 +9,3 @@ describe("responsive.utils.align", () => {
     expect(result.trim()).toBe(align);
   });
 });
-

@@ -1,9 +1,8 @@
 import { describe, test, expect } from "bun:test";
-import { getClassByViewPort } from "../../responsive.utils";
-import type { ClassByResponsiveProps } from "../../responsive.utils";
-import { TextAlignmentType } from "../../../react-base-component/types/texts";
+import { getClassByViewPort, type ClassByResponsiveProps } from "../../utils";
+import { TextAlignmentType } from "../../types/texts";
 
-describe("responsive.utils.overrides:align", () => {
+describe("react-base-component.props.overrides:align", () => {
   test(`concatenate text-alignment-value and md:text-alignment-value`, () => {
     const align: TextAlignmentType = "text-left";
     const md_align: TextAlignmentType = "text-right";
@@ -41,4 +40,3 @@ describe("responsive.utils.overrides:align", () => {
     expect(result.trim()).toBe(`${align} md:${md_align} lg:${lg_align}`);
   });
 });
-

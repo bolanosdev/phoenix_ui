@@ -1,12 +1,12 @@
 import type {
   ScaleType,
   RoundingType,
-  ActionType,
+  ActionType
 } from '../../react-base-component/types/attributes'
 import type {
   ReactBaseComponentProperties,
-  ReactBaseComponentAttributes,
-} from '../../react-base-component/react-base-component.types'
+  ReactBaseComponentAttributes
+} from '../../react-base-component/types'
 
 export interface ButtonAttributes extends ReactBaseComponentAttributes {
   disabled?: boolean

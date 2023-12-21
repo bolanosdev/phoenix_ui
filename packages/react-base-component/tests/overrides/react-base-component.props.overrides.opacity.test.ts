@@ -1,7 +1,6 @@
 import { describe, test, expect } from "bun:test";
-import { getClassByViewPort } from "../../responsive.utils";
-import type { ClassByResponsiveProps } from "../../responsive.utils";
-import { OpacityType } from "../../../react-base-component/types/attributes";
+import { getClassByViewPort, type ClassByResponsiveProps } from "../../utils";
+import { OpacityType } from "../../types/attributes";
 
 describe.only("responsive.utils.overrides.opacity", () => {
   test(`:\${opacity-value}`, () => {
@@ -48,4 +47,3 @@ describe.only("responsive.utils.overrides.opacity", () => {
     expect(result.trim()).toBe(`${opacity} md:${md_opacity} lg:${lg_opacity}`);
   });
 });
-

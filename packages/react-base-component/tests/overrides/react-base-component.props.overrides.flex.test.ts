@@ -1,9 +1,8 @@
 import { describe, test, expect } from "bun:test";
-import { getClassByViewPort } from "../../responsive.utils";
-import type { ClassByResponsiveProps } from "../../responsive.utils";
-import type { FlexDirectionType } from "../../../react-base-component/types/attributes";
+import { getClassByViewPort, type ClassByResponsiveProps } from "../../utils";
+import type { FlexDirectionType } from "../../types/attributes";
 
-describe("responsive.utils.override.flex", () => {
+describe("react-base-component.props.override.flex", () => {
   test(`flex:directiion and md:flex:direction`, () => {
     const direction: FlexDirectionType = "flex-row";
     const md_direction: FlexDirectionType = "flex-col";
@@ -59,4 +58,3 @@ describe("responsive.utils.override.flex", () => {
     );
   });
 });
-

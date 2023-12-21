@@ -1,8 +1,7 @@
 import { describe, test, expect } from "bun:test";
-import { getClassByViewPort } from "../responsive.utils";
-import type { ClassByResponsiveProps } from "../responsive.utils";
+import { getClassByViewPort, type ClassByResponsiveProps } from "../utils";
 
-describe("responsive.utils.flex", () => {
+describe("react-base-component.props.flex", () => {
   test(`:direction`, () => {
     const direction = "flex-row";
     const properties: ClassByResponsiveProps = { flex: { direction } };
@@ -25,10 +24,10 @@ describe("responsive.utils.flex", () => {
   });
 
   test(`:alignItems`, () => {
-    const aligntestems = "items-stretch";
-    const properties: ClassByResponsiveProps = { flex: { aligntestems } };
+    const alignItems = "items-stretch";
+    const properties: ClassByResponsiveProps = { flex: { alignItems } };
     const result = getClassByViewPort(properties);
-    expect(result.trim()).toBe(aligntestems);
+    expect(result.trim()).toBe(alignItems);
   });
 
   test(`:justifyContent`, () => {
@@ -122,4 +121,3 @@ describe("responsive.utils.flex", () => {
     expect(result.trim()).toContain(`basis-${basis}`);
   });
 });
-

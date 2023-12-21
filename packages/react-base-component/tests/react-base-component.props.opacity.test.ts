@@ -1,8 +1,7 @@
 import { describe, test, expect } from "bun:test";
-import { getClassByViewPort } from "../responsive.utils";
-import type { ClassByResponsiveProps } from "../responsive.utils";
+import { getClassByViewPort, type ClassByResponsiveProps } from "../utils";
 
-describe("responsive.utils.opacity", () => {
+describe("react-base-component.props.opacity", () => {
   test(`:opacity-value`, () => {
     const opacity = "opacity-100";
     const properties: ClassByResponsiveProps = { opacity };
@@ -10,4 +9,3 @@ describe("responsive.utils.opacity", () => {
     expect(result.trim()).toBe(opacity);
   });
 });
-

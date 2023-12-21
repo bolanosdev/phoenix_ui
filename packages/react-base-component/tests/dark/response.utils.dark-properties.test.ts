@@ -1,12 +1,11 @@
 import { describe, test, expect } from "bun:test";
-import { getClassByViewPort } from "../../responsive.utils";
-import type { ClassByResponsiveProps } from "../../responsive.utils";
+import { getClassByViewPort, type ClassByResponsiveProps } from "../../utils";
 import type {
   TextColor,
   TextWeight,
   BackgroundColor,
   BackgroundWeight,
-} from "../../../react-base-component/types/attributes";
+} from "../../types/attributes";
 
 // TODO this test needs more work
 describe("dark properties", () => {
@@ -76,4 +75,3 @@ describe("dark properties", () => {
     });
   });
 });
-

@@ -1,8 +1,7 @@
 import { describe, test, expect } from "bun:test";
-import { getClassByViewPort } from "../responsive.utils";
-import type { ClassByResponsiveProps } from "../responsive.utils";
+import { getClassByViewPort, type ClassByResponsiveProps } from "../utils";
 
-describe("responsive.utils.padding", () => {
+describe("react-base-component.props.padding", () => {
   test(`:all`, () => {
     const padding = "p-0";
     const properties: ClassByResponsiveProps = { padding: { all: padding } };
@@ -90,4 +89,3 @@ describe("responsive.utils.padding", () => {
     expect(result.trim()).toContain(y_padding);
   });
 });
-

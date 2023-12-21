@@ -2,7 +2,7 @@ import React from 'react'
 import { describe, test, expect, mock } from 'bun:test'
 import { render, fireEvent } from '@testing-library/react'
 import { Button } from './react-button'
-import { ColorStubs } from '../../stubs/colors.stubs'
+import { ColorStubs } from '../../react-base-component/tests/stubs/colors.stubs'
 import { type ButtonProperties } from './react-button.types'
 
 describe('Button', () => {
@@ -10,7 +10,7 @@ describe('Button', () => {
     const button = <Button>Hello World</Button>
     const { container } = render(button)
     expect(container.querySelector('button')?.className).toEqual(
-      'button medium'
+      'button medium',
     )
   })
 
@@ -22,7 +22,7 @@ describe('Button', () => {
     const button = <Button {...props} />
     const { container } = render(button)
     expect(container.querySelector('button')?.className).toEqual(
-      'button medium text-white bg-blue-500'
+      'button medium text-white bg-blue-500',
     )
   })
 
@@ -44,7 +44,7 @@ describe('Button', () => {
     const button = <Button {...props} />
     const { container } = render(button)
     expect(container.querySelector('button')?.className).toEqual(
-      'button medium rounded-lg'
+      'button medium rounded-lg',
     )
   })
 
@@ -56,7 +56,7 @@ describe('Button', () => {
     const button = <Button {...props} />
     const { container } = render(button)
     expect(container.querySelector('button')?.className).toEqual(
-      'button medium w-full'
+      'button medium w-full',
     )
   })
 
@@ -83,7 +83,7 @@ describe('Button', () => {
     const { container } = render(<Button {...props} />)
 
     expect(container.querySelector('button')?.hasAttribute('disabled')).toBe(
-      true
+      true,
     )
   })
 
@@ -103,29 +103,29 @@ describe('Button', () => {
     expect(result).toContain(`dark:${ColorStubs.dark.colors.text.color}-400`)
 
     expect(result).toContain(
-      `md:${ColorStubs.overrides.medium.colors.text.color}-400`
+      `md:${ColorStubs.overrides.medium.colors.text.color}-400`,
     )
     expect(result).toContain(
-      `md:${ColorStubs.overrides.medium.colors.background.color}-400`
+      `md:${ColorStubs.overrides.medium.colors.background.color}-400`,
     )
     expect(result).toContain(
-      `md:dark:${ColorStubs.overrides.medium.dark.colors.text.color}-400`
+      `md:dark:${ColorStubs.overrides.medium.dark.colors.text.color}-400`,
     )
     expect(result).toContain(
-      `md:dark:${ColorStubs.overrides.medium.dark.colors.background.color}-400`
+      `md:dark:${ColorStubs.overrides.medium.dark.colors.background.color}-400`,
     )
 
     expect(result).toContain(
-      `lg:${ColorStubs.overrides.large.colors.text.color}-400`
+      `lg:${ColorStubs.overrides.large.colors.text.color}-400`,
     )
     expect(result).toContain(
-      `lg:${ColorStubs.overrides.large.colors.background.color}-400`
+      `lg:${ColorStubs.overrides.large.colors.background.color}-400`,
     )
     expect(result).toContain(
-      `lg:dark:${ColorStubs.overrides.large.dark.colors.text.color}-400`
+      `lg:dark:${ColorStubs.overrides.large.dark.colors.text.color}-400`,
     )
     expect(result).toContain(
-      `lg:dark:${ColorStubs.overrides.large.dark.colors.background.color}-400`
+      `lg:dark:${ColorStubs.overrides.large.dark.colors.background.color}-400`,
     )
   })
 })

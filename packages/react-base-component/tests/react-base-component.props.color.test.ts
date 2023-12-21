@@ -1,14 +1,13 @@
 import { describe, test, expect } from "bun:test";
-import { getClassByViewPort } from "../responsive.utils";
-import type { ClassByResponsiveProps } from "../responsive.utils";
+import { getClassByViewPort, type ClassByResponsiveProps } from "../utils";
 import type {
   TextColor,
   TextWeight,
   BackgroundColor,
   BackgroundWeight,
-} from "../../react-base-component/types/attributes";
+} from "../types/attributes";
 
-describe("responsive.utils.color", () => {
+describe("react-base-component.props.color", () => {
   test(`:text-color default weight`, () => {
     const color: TextColor = "text-blue";
     const properties: ClassByResponsiveProps = { colors: { text: { color } } };
@@ -45,4 +44,3 @@ describe("responsive.utils.color", () => {
     expect(result.trim()).toBe(`${color}-${weight}`);
   });
 });
-

@@ -1,6 +1,5 @@
 import { describe, test, expect } from "bun:test";
-import { getClassByViewPort } from "../responsive.utils";
-import type { ClassByResponsiveProps } from "../responsive.utils";
+import { getClassByViewPort, type ClassByResponsiveProps } from "../utils";
 
 describe("responsive.utils.size", () => {
   test(`:text-size`, () => {
@@ -10,4 +9,3 @@ describe("responsive.utils.size", () => {
     expect(result.trim()).toBe(size);
   });
 });
-

@@ -1,8 +1,7 @@
 import { describe, test, expect } from "bun:test";
-import { getClassByViewPort } from "../responsive.utils";
-import type { ClassByResponsiveProps } from "../responsive.utils";
+import { getClassByViewPort, type ClassByResponsiveProps } from "../../utils";
 
-describe("responsive.utils.margin", () => {
+describe("react-base-component.props.overrides.margin", () => {
   test(`:all`, () => {
     const margin = "m-0";
     const properties: ClassByResponsiveProps = { margin: { all: margin } };
@@ -90,4 +89,3 @@ describe("responsive.utils.margin", () => {
     expect(result.trim()).toContain(y_margin);
   });
 });
-

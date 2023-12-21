@@ -1,24 +1,33 @@
-import { AllMargins, AllPaddings } from "../react-base-component/types/spacing";
-import { AllWidths, AllHeights } from "../react-base-component/types/sizing";
-import {
-  TextSizeType,
-  TextAlignmentType,
-} from "../react-base-component/types/texts";
-import {
-  ResponsiveOverrides,
-  DarkOverrides,
-} from "../react-base-component/types/utilities";
-import { BackgroundColorType } from "../react-base-component/types/attributes/background.types";
-import {
+import type {
   FlexType,
   OpacityType,
-  ColorPropertyType,
   TextColorType,
-} from "../react-base-component/types/attributes";
-import {
-  getTextColorAttribute,
-  getBackgroundColorAttribute,
-} from "../react-base-component/react-base-component.utils";
+  BackgroundColorType,
+  ColorPropertyType,
+  ActionType,
+} from "../types/attributes";
+import { AllMargins, AllPaddings } from "../types/spacing";
+import { AllWidths, AllHeights } from "../types/sizing";
+import { TextSizeType, TextAlignmentType } from "../types/texts";
+import { ResponsiveOverrides, DarkOverrides } from "../types/utilities";
+import type {
+  ReactBaseComponentAttributes,
+  ReactBaseComponentProperties,
+} from "../types/";
+
+import { DATA_TEST_ID } from "../constants";
+
+type ActionMap = {
+  neutral: ColorPropertyType;
+  primary: ColorPropertyType;
+  secondary: ColorPropertyType;
+  success: ColorPropertyType;
+  danger: ColorPropertyType;
+  warning: ColorPropertyType;
+  info: ColorPropertyType;
+  light: ColorPropertyType;
+  dark: ColorPropertyType;
+};
 
 export type ClassByResponsiveProps = {
   size?: TextSizeType;
@@ -32,6 +41,106 @@ export type ClassByResponsiveProps = {
   flex?: FlexType;
   dark?: DarkOverrides;
   overrides?: ResponsiveOverrides | undefined;
+};
+export const getActionColorAttribute = (action: ActionType) => {
+  const actions: ActionMap = {
+    neutral: {
+      text: { color: "text-white" },
+      background: { color: "bg-slate", weight: "500" },
+    },
+    primary: {
+      text: { color: "text-white", weight: "500" },
+      background: { color: "bg-blue", weight: "500" },
+    },
+    secondary: {
+      text: { color: "text-white" },
+      background: { color: "bg-neutral", weight: "500" },
+    },
+    success: {
+      text: { color: "text-white" },
+      background: { color: "bg-emerald", weight: "500" },
+    },
+    danger: {
+      text: { color: "text-black" },
+      background: { color: "bg-red", weight: "500" },
+    },
+    warning: {
+      text: { color: "text-white" },
+      background: { color: "bg-yellow", weight: "500" },
+    },
+    info: {
+      text: { color: "text-white" },
+      background: { color: "bg-teal", weight: "500" },
+    },
+    light: { text: { color: "text-black" }, background: { color: "bg-white" } },
+    dark: { text: { color: "text-white" }, background: { color: "bg-black" } },
+  };
+  // @ts-ignore
+  return `${getTextColorAttribute(
+    actions[action].text
+  )} ${getBackgroundColorAttribute(actions[action].background)}`;
+};
+
+export const getTextColorAttribute = ({
+  color = "text-slate",
+  weight = "400",
+}: TextColorType) => {
+  if (color === "text-white" || color === "text-black") return color;
+  return color + "-" + weight;
+};
+
+export const getBackgroundColorAttribute = ({
+  color = "bg-slate",
+  weight = "400",
+}: BackgroundColorType) => {
+  if (color === "bg-white" || color === "bg-black") return color;
+  return color + "-" + weight;
+};
+
+export const getProperties = (properties: ReactBaseComponentProperties) => {
+  let {
+    id,
+    size,
+    width,
+    height,
+    margin,
+    padding,
+    flex,
+    dark,
+    overrides,
+    className,
+    dataTestId,
+    onClick,
+  } = properties;
+  let attributes: ReactBaseComponentAttributes = {};
+  className += getClassByViewPort({
+    size,
+    width,
+    height,
+    margin,
+    padding,
+    flex,
+    dark,
+    overrides,
+  });
+
+  if (onClick) {
+    attributes.onClick = onClick;
+  }
+
+  if (id !== "") {
+    attributes.id = id;
+  }
+
+  if (className !== "") {
+    attributes.className = className;
+  }
+
+  if (dataTestId !== "") {
+    attributes[DATA_TEST_ID] = dataTestId;
+  }
+
+  return attributes;
 };
 
 const getResponsiveClassName = (
@@ -151,4 +260,3 @@ export const getClassByViewPort = (properties: ClassByResponsiveProps) => {
 
   return classes;
 };
-

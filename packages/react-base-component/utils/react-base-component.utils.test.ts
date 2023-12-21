@@ -3,9 +3,11 @@ import {
   getTextColorAttribute,
   getBackgroundColorAttribute,
   getProperties,
+  getClassByViewPort,
+  type ClassByResponsiveProps,
 } from "./react-base-component.utils";
-import type { TextColorType, BackgroundColorType } from "./types/attributes";
-import { ReactBaseComponentProperties } from "./react-base-component.types";
+import type { TextColorType, BackgroundColorType } from "../types/attributes";
+import { ReactBaseComponentProperties } from "../types";
 
 describe("base-attribute", () => {
   describe(":getTextColorAttribute", () => {
@@ -86,6 +88,22 @@ describe("base-attribute", () => {
       };
       const result = getProperties(properties);
       expect(result.onClick).toBe(onClickSpy);
+    });
+  });
+});
+
+describe("responsive utils", () => {
+  describe("getClassByViewPort", () => {
+    test("empty properties", () => {
+      const properties: ClassByResponsiveProps = {};
+      const result = getClassByViewPort(properties);
+      expect(result).toBe("");
+    });
+
+    test("doesnt throw properties", () => {
+      const properties: ClassByResponsiveProps = { size: undefined };
+      const result = getClassByViewPort(properties);
+      expect(result).toBe("");
     });
   });
 });

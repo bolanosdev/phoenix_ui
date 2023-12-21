@@ -1,14 +1,10 @@
 import { SyntheticEvent } from "react";
 
-import type { TextSizeType } from "./types/texts";
-import type { AllMargins, AllPaddings } from "./types/spacing";
-import type { AllHeights, AllWidths } from "./types/sizing";
-import type { ResponsiveOverrides, DarkOverrides } from "./types/utilities";
-import type {
-  FlexType,
-  ColorPropertyType,
-  OpacityType,
-} from "./types/attributes";
+import type { TextSizeType } from "./texts";
+import type { AllMargins, AllPaddings } from "./spacing";
+import type { AllHeights, AllWidths } from "./sizing";
+import type { ResponsiveOverrides, DarkOverrides } from "./utilities";
+import type { FlexType, ColorPropertyType, OpacityType } from "./attributes";
 import { DATA_TEST_ID } from "../constants";
 
 export interface ReactBaseComponentAttributes {
@@ -39,4 +35,3 @@ export interface ReactBaseComponentProperties {
   overrides?: ResponsiveOverrides;
   onClick?: (event: SyntheticEvent) => void;
 }
-

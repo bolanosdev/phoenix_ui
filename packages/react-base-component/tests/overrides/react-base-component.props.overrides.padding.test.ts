@@ -1,13 +1,13 @@
 import { describe, test, expect } from "bun:test";
-import { getClassByViewPort } from "../../responsive.utils";
-import type { ClassByResponsiveProps } from "../../responsive.utils";
+import { getClassByViewPort, type ClassByResponsiveProps } from "../../utils";
+
 import {
   AllPaddingType,
   LeftPaddingType,
   BottomPaddingType,
-} from "../../../react-base-component/types/spacing";
+} from "../../types/spacing";
 
-describe("responsive.utils.overrides:padding", () => {
+describe("react-base-component.props.overrides:padding", () => {
   test(`should concatenate :\${pading-vvalue} with md:\${pading-value}`, () => {
     const padding: AllPaddingType = "p-0";
     const md_pading: AllPaddingType = "p-5";
@@ -88,4 +88,3 @@ describe("responsive.utils.overrides:padding", () => {
     expect(result.trim()).toBe(`${padding} md:${md_pading} lg:${lg_pading}`);
   });
 });
-

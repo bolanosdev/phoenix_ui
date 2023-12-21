@@ -1,9 +1,8 @@
 import { describe, test, expect } from "bun:test";
-import { getClassByViewPort } from "../../responsive.utils";
-import type { ClassByResponsiveProps } from "../../responsive.utils";
-import { TextSizeType } from "../../../react-base-component/types/texts";
+import { getClassByViewPort, type ClassByResponsiveProps } from "../../utils";
+import { TextSizeType } from "../../types/texts";
 
-describe("responsive.utils.overrides.size", () => {
+describe("react-base-component.props.overrides.size", () => {
   test(`should concatenate text-size and md:text-size`, () => {
     const size: TextSizeType = "text-sm";
     const md_size: TextSizeType = "text-base";
@@ -45,4 +44,3 @@ describe("responsive.utils.overrides.size", () => {
     expect(result.trim()).toBe(`${size} md:${md_size} lg:${lg_size}`);
   });
 });
-

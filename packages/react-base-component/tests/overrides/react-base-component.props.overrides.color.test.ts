@@ -1,13 +1,9 @@
 import { describe, test, expect } from "bun:test";
-import { getClassByViewPort } from "../../responsive.utils";
-import {
-  TextColor,
-  BackgroundColor,
-} from "../../../react-base-component/types/attributes";
-import { ColorStubs } from "../../../stubs/colors.stubs";
-import type { ClassByResponsiveProps } from "../../responsive.utils";
+import { getClassByViewPort, type ClassByResponsiveProps } from "../../utils";
+import { TextColor, BackgroundColor } from "../../types/attributes";
+import { ColorStubs } from "../stubs/colors.stubs";
 
-describe("responsive.utils.overrides:color", () => {
+describe("react-base-component.props.overrides:color", () => {
   describe(":TextColorType", () => {
     test(`text-color and md::dark:text-color`, () => {
       const color: TextColor = "text-blue";
@@ -216,4 +212,3 @@ describe("responsive.utils.overrides:color", () => {
     });
   });
 });
-
