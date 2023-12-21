@@ -1,3 +1,4 @@
+
 {
   "env": {
     "browser": true,
@@ -10,9 +11,7 @@
   },
   "plugins": ["@typescript-eslint"],
   "rules": {
-    "no-magic-numbers": "off",
-    "comma-dangle": "off",
-    "@typescript-eslint/comma-dangle": "off"
+    "no-magic-numbers": "off"
   },
   "extends": ["eslint:recommended", "prettier"]
 }

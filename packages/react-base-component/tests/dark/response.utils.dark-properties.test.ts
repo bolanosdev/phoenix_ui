@@ -1,11 +1,14 @@
 import { describe, test, expect } from "bun:test";
-import { getClassByViewPort, type ClassByResponsiveProps } from "../../utils";
+import {
+  getClassByViewPort,
+  type ClassByResponsiveProps,
+} from "../../src/utils";
 import type {
   TextColor,
   TextWeight,
   BackgroundColor,
   BackgroundWeight,
-} from "../../types/attributes";
+} from "../../src/types/attributes";
 
 // TODO this test needs more work
 describe("dark properties", () => {

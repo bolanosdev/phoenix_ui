@@ -1,5 +1,5 @@
 import { describe, test, expect } from "bun:test";
-import { getClassByViewPort, type ClassByResponsiveProps } from "../utils";
+import { getClassByViewPort, type ClassByResponsiveProps } from "../src/utils";
 
 describe("react-base-component.props.padding", () => {
   test(`:all`, () => {

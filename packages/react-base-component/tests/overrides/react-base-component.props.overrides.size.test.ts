@@ -1,6 +1,9 @@
 import { describe, test, expect } from "bun:test";
-import { getClassByViewPort, type ClassByResponsiveProps } from "../../utils";
-import { TextSizeType } from "../../types/texts";
+import {
+  getClassByViewPort,
+  type ClassByResponsiveProps,
+} from "../../src/utils";
+import { TextSizeType } from "../../src/types/texts";
 
 describe("react-base-component.props.overrides.size", () => {
   test(`should concatenate text-size and md:text-size`, () => {

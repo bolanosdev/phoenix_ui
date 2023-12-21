@@ -1,5 +1,8 @@
 import { describe, test, expect } from "bun:test";
-import { getClassByViewPort, type ClassByResponsiveProps } from "../../utils";
+import {
+  getClassByViewPort,
+  type ClassByResponsiveProps,
+} from "../../src/utils";
 import { TextAlignmentType } from "../../types/texts";
 
 describe("react-base-component.props.overrides:align", () => {

@@ -1,4 +1,4 @@
-import type {
+import {
   FlexType,
   OpacityType,
   TextColorType,
@@ -10,7 +10,7 @@ import { AllMargins, AllPaddings } from "../types/spacing";
 import { AllWidths, AllHeights } from "../types/sizing";
 import { TextSizeType, TextAlignmentType } from "../types/texts";
 import { ResponsiveOverrides, DarkOverrides } from "../types/utilities";
-import type {
+import {
   ReactBaseComponentAttributes,
   ReactBaseComponentProperties,
 } from "../types/";
@@ -42,6 +42,7 @@ export type ClassByResponsiveProps = {
   dark?: DarkOverrides;
   overrides?: ResponsiveOverrides | undefined;
 };
+
 export const getActionColorAttribute = (action: ActionType) => {
   const actions: ActionMap = {
     neutral: {
