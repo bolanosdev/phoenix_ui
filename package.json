@@ -4,15 +4,22 @@
   "scripts": {
     "lint": "nx affected -t lint",
     "test": "nx affected -t test",
+    "dev:tailwind:base": "tailwindcss -i ./packages/baseline/baseline.css -o ./packages/baseline/baseline.compiled.css --watch",
+    "dev:tailwind": "concurrently \"npm run dev:tailwind:base\" ",
+    "dev:storybook": "storybook dev -p 6006",
+    "dev": "bun run dev:storybook",
+    "prod:tailwind": "tailwindcss -i ./packages/baseline/baseline.css -o ./packages/baseline/baseline.minified.css --minify",
     "version": "changeset version",
     "release": "changeset publish",
-    "dev": "storybook dev -p 6006",
-    "build": "storybook build"
+    "build": "storybook build",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "workspaces": [
     "packages/*"
   ],
   "dependencies": {
+    "classnames": "^2.3.2",
     "react": "^18.2.0"
   },
   "devDependencies": {
@@ -20,13 +27,21 @@
     "@storybook/addon-essentials": "^7.6.6",
     "@storybook/addon-interactions": "^7.6.6",
     "@storybook/addon-links": "^7.6.6",
-    "@storybook/addon-mdx-gfm": "^7.6.6",
     "@storybook/addon-onboarding": "^1.0.10",
     "@storybook/blocks": "^7.6.6",
     "@storybook/react": "^7.6.6",
-    "@storybook/react-webpack5": "^7.6.6",
+    "@storybook/react-vite": "^7.6.6",
     "@storybook/test": "^7.6.6",
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/typography": "^0.5.10",
+    "@types/node": "^20.10.5",
+    "@typescript-eslint/parser": "^6.15.0",
+    "autoprefixer": "^10.4.16",
+    "eslint-config-prettier": "^9.1.0",
     "nx": "^17.2.6",
+    "postcss-import": "^15.1.0",
+    "postcss-nesting": "^12.0.2",
+    "prettier": "^3.1.1",
     "prop-types": "^15.8.1",
     "react-dom": "^18.2.0",
     "storybook": "^7.6.6"

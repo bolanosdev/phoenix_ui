@@ -1,0 +1,19 @@
+.button {
+  &.small {
+    @apply px-2;
+    @apply py-2;
+  }
+  &.medium {
+    @apply px-4;
+    @apply py-2;
+  }
+  &.large {
+    @apply px-16;
+    @apply py-3;
+  }
+
+  &[disabled] {
+    cursor: pointer;
+    @apply opacity-50;
+  }
+}

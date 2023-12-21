@@ -1,0 +1,72 @@
+.bg-neutral { background-color: var(--color-neutral-500); }
+.bg-stone   { background-color: var(--color-stone-500); }
+.bg-slate   { background-color: var(--color-slate-500); }
+.bg-gray    { background-color: var(--color-gray-500); }
+.bg-zinc    { background-color: var(--color-zinc-500); }
+.bg-red     { background-color: var(--color-red-500); }
+.bg-orange  { background-color: var(--color-orange-500); }
+.bg-amber   { background-color: var(--color-amber-500); }
+.bg-yellow  { background-color: var(--color-yellow-500); }
+.bg-lime    { background-color: var(--color-lime-500); }
+.bg-green   { background-color: var(--color-green-500); }
+.bg-emerald { background-color: var(--color-emerald-500); }
+.bg-teal    { background-color: var(--color-teal-500); }
+.bg-cyan    { background-color: var(--color-cyan-500); }
+.bg-sky     { background-color: var(--color-sky-500); }
+.bg-blue    { background-color: var(--color-blue-500); }
+.bg-indigo  { background-color: var(--color-indigo-500); }
+.bg-violet  { background-color: var(--color-violet-500); }
+.bg-purple  { background-color: var(--color-purple-500); }
+.bg-fuchsia { background-color: var(--color-fuchsia-500); }
+.bg-pink    { background-color: var(--color-pink-500); }
+.bg-rose    { background-color: var(--color-rose-500); }
+
+@media (min-width: 768px) {
+  .md\:bg-neutral { background-color: var(--color-neutral-500); }
+  .md\:bg-stone   { background-color: var(--color-stone-500); }
+  .md\:bg-slate   { background-color: var(--color-slate-500); }
+  .md\:bg-gray    { background-color: var(--color-gray-500); }
+  .md\:bg-zinc    { background-color: var(--color-zinc-500); }
+  .md\:bg-red     { background-color: var(--color-red-500); }
+  .md\:bg-orange  { background-color: var(--color-orange-500); }
+  .md\:bg-amber   { background-color: var(--color-amber-500); }
+  .md\:bg-yellow  { background-color: var(--color-yellow-500); }
+  .md\:bg-lime    { background-color: var(--color-lime-500); }
+  .md\:bg-green   { background-color: var(--color-green-500); }
+  .md\:bg-emerald { background-color: var(--color-emerald-500); }
+  .md\:bg-teal    { background-color: var(--color-teal-500); }
+  .md\:bg-cyan    { background-color: var(--color-cyan-500); }
+  .md\:bg-sky     { background-color: var(--color-sky-500); }
+  .md\:bg-blue    { background-color: var(--color-blue-500); }
+  .md\:bg-indigo  { background-color: var(--color-indigo-500); }
+  .md\:bg-violet  { background-color: var(--color-violet-500); }
+  .md\:bg-purple  { background-color: var(--color-purple-500); }
+  .md\:bg-fuchsia { background-color: var(--color-fuchsia-500); }
+  .md\:bg-pink    { background-color: var(--color-pink-500); }
+  .md\:bg-rose    { background-color: var(--color-rose-500); }
+}
+
+@media (min-width: 1024px) {
+  .lg\:bg-neutral { background-color: var(--color-neutral-500); }
+  .lg\:bg-stone   { background-color: var(--color-stone-500); }
+  .lg\:bg-slate   { background-color: var(--color-slate-500); }
+  .lg\:bg-gray    { background-color: var(--color-gray-500); }
+  .lg\:bg-zinc    { background-color: var(--color-zinc-500); }
+  .lg\:bg-red     { background-color: var(--color-red-500); }
+  .lg\:bg-orange  { background-color: var(--color-orange-500); }
+  .lg\:bg-amber   { background-color: var(--color-amber-500); }
+  .lg\:bg-yellow  { background-color: var(--color-yellow-500); }
+  .lg\:bg-lime    { background-color: var(--color-lime-500); }
+  .lg\:bg-green   { background-color: var(--color-green-500); }
+  .lg\:bg-emerald { background-color: var(--color-emerald-500); }
+  .lg\:bg-teal    { background-color: var(--color-teal-500); }
+  .lg\:bg-cyan    { background-color: var(--color-cyan-500); }
+  .lg\:bg-sky     { background-color: var(--color-sky-500); }
+  .lg\:bg-blue    { background-color: var(--color-blue-500); }
+  .lg\:bg-indigo  { background-color: var(--color-indigo-500); }
+  .lg\:bg-violet  { background-color: var(--color-violet-500); }
+  .lg\:bg-purple  { background-color: var(--color-purple-500); }
+  .lg\:bg-fuchsia { background-color: var(--color-fuchsia-500); }
+  .lg\:bg-pink    { background-color: var(--color-pink-500); }
+  .lg\:bg-rose    { background-color: var(--color-rose-500); }
+}
