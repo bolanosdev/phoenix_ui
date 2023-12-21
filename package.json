@@ -11,7 +11,9 @@
     "prod:tailwind": "tailwindcss -i ./packages/baseline/baseline.css -o ./packages/baseline/baseline.minified.css --minify",
     "version": "changeset version",
     "release": "changeset publish",
-    "build": "storybook build"
+    "build": "storybook build",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "workspaces": [
     "packages/*"
@@ -22,11 +24,22 @@
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.1",
+    "@storybook/addon-essentials": "^7.6.6",
+    "@storybook/addon-interactions": "^7.6.6",
+    "@storybook/addon-links": "^7.6.6",
+    "@storybook/addon-onboarding": "^1.0.10",
+    "@storybook/blocks": "^7.6.6",
+    "@storybook/react": "^7.6.6",
+    "@storybook/react-vite": "^7.6.6",
+    "@storybook/test": "^7.6.6",
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.10",
     "@types/node": "^20.10.5",
+    "autoprefixer": "^10.4.16",
     "postcss-import": "^15.1.0",
     "postcss-nesting": "^12.0.2",
-    "react-dom": "^18.2.0"
+    "prop-types": "^15.8.1",
+    "react-dom": "^18.2.0",
+    "storybook": "^7.6.6"
   }
 }

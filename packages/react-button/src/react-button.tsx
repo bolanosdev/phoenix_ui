@@ -10,6 +10,7 @@ import {
   type ButtonAttributes,
   type ButtonProperties,
 } from './react-button.types.ts'
+import './react-button.css'
 
 const Button: React.FC<ButtonProperties> = (properties) => {
   const classNames = classnames(
