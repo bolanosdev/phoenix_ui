@@ -1,6 +1,9 @@
 import { describe, test, expect } from "bun:test";
-import { getClassByViewPort, type ClassByResponsiveProps } from "../../utils";
-import { OpacityType } from "../../types/attributes";
+import {
+  getClassByViewPort,
+  type ClassByResponsiveProps,
+} from "../../src/utils";
+import { OpacityType } from "../../src/types/attributes";
 
 describe.only("responsive.utils.overrides.opacity", () => {
   test(`:\${opacity-value}`, () => {

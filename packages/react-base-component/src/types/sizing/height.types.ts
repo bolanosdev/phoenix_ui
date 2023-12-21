@@ -1,4 +1,6 @@
 import { NumericType, DecimalType, PercentageType} from '../attributes/attribute.types'
+
+// eslint-disable-next-line 
 type HeightType = 'auto'|'px'|'screen'|'full'|'min'|'max'|'fit';
 
 export type HeightPropertyType = NumericType | DecimalType | PercentageType | HeightType;

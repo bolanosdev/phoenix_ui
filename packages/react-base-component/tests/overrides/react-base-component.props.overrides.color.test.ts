@@ -1,6 +1,9 @@
 import { describe, test, expect } from "bun:test";
-import { getClassByViewPort, type ClassByResponsiveProps } from "../../utils";
-import { TextColor, BackgroundColor } from "../../types/attributes";
+import {
+  getClassByViewPort,
+  type ClassByResponsiveProps,
+} from "../../src/utils";
+import { TextColor, BackgroundColor } from "../../src/types/attributes";
 import { ColorStubs } from "../stubs/colors.stubs";
 
 describe("react-base-component.props.overrides:color", () => {
@@ -26,7 +29,7 @@ describe("react-base-component.props.overrides:color", () => {
       };
       const result = getClassByViewPort(properties);
       expect(result.trim()).toBe(
-        `${color}-400 dark:${dark_color}-400 md:${md_color}-400 md:dark:${md_dark_color}-400`
+        `${color}-400 dark:${dark_color}-400 md:${md_color}-400 md:dark:${md_dark_color}-400`,
       );
     });
 
@@ -51,7 +54,7 @@ describe("react-base-component.props.overrides:color", () => {
       };
       const result = getClassByViewPort(properties);
       expect(result.trim()).toBe(
-        `${color}-400 dark:${dark_color}-400 lg:${lg_color}-400 lg:dark:${lg_dark_color}-400`
+        `${color}-400 dark:${dark_color}-400 lg:${lg_color}-400 lg:dark:${lg_dark_color}-400`,
       );
     });
 
@@ -84,7 +87,7 @@ describe("react-base-component.props.overrides:color", () => {
       };
       const result = getClassByViewPort(properties);
       expect(result.trim()).toBe(
-        `${color}-400 dark:${dark_color}-400 md:${md_color}-400 md:dark:${md_dark_color}-400 lg:${lg_color}-400 lg:dark:${lg_dark_color}-400`
+        `${color}-400 dark:${dark_color}-400 md:${md_color}-400 md:dark:${md_dark_color}-400 lg:${lg_color}-400 lg:dark:${lg_dark_color}-400`,
       );
     });
   });
@@ -111,7 +114,7 @@ describe("react-base-component.props.overrides:color", () => {
       };
       const result = getClassByViewPort(properties);
       expect(result.trim()).toBe(
-        `${color} dark:${dark_color}-400 md:${md_color}-400 md:dark:${md_dark_color}-400`
+        `${color} dark:${dark_color}-400 md:${md_color}-400 md:dark:${md_dark_color}-400`,
       );
     });
 
@@ -136,7 +139,7 @@ describe("react-base-component.props.overrides:color", () => {
       };
       const result = getClassByViewPort(properties);
       expect(result.trim()).toBe(
-        `${color}-400 dark:${dark_color}-400 lg:${lg_color}-400 lg:dark:${lg_dark_color}-400`
+        `${color}-400 dark:${dark_color}-400 lg:${lg_color}-400 lg:dark:${lg_dark_color}-400`,
       );
     });
 
@@ -169,7 +172,7 @@ describe("react-base-component.props.overrides:color", () => {
       };
       const result = getClassByViewPort(properties);
       expect(result.trim()).toBe(
-        `${color}-400 dark:${dark_color}-400 md:${md_color}-400 md:dark:${md_dark_color}-400 lg:${lg_color}-400 lg:dark:${lg_dark_color}-400`
+        `${color}-400 dark:${dark_color}-400 md:${md_color}-400 md:dark:${md_dark_color}-400 lg:${lg_color}-400 lg:dark:${lg_dark_color}-400`,
       );
     });
   });
@@ -185,29 +188,29 @@ describe("react-base-component.props.overrides:color", () => {
       expect(result).toContain(`dark:${ColorStubs.dark.colors.text.color}-400`);
 
       expect(result).toContain(
-        `md:${ColorStubs.overrides.medium.colors.text.color}-400`
+        `md:${ColorStubs.overrides.medium.colors.text.color}-400`,
       );
       expect(result).toContain(
-        `md:${ColorStubs.overrides.medium.colors.background.color}-400`
+        `md:${ColorStubs.overrides.medium.colors.background.color}-400`,
       );
       expect(result).toContain(
-        `md:dark:${ColorStubs.overrides.medium.dark.colors.text.color}-400`
+        `md:dark:${ColorStubs.overrides.medium.dark.colors.text.color}-400`,
       );
       expect(result).toContain(
-        `md:dark:${ColorStubs.overrides.medium.dark.colors.background.color}-400`
+        `md:dark:${ColorStubs.overrides.medium.dark.colors.background.color}-400`,
       );
 
       expect(result).toContain(
-        `lg:${ColorStubs.overrides.large.colors.text.color}-400`
+        `lg:${ColorStubs.overrides.large.colors.text.color}-400`,
       );
       expect(result).toContain(
-        `lg:${ColorStubs.overrides.large.colors.background.color}-400`
+        `lg:${ColorStubs.overrides.large.colors.background.color}-400`,
       );
       expect(result).toContain(
-        `lg:dark:${ColorStubs.overrides.large.dark.colors.text.color}-400`
+        `lg:dark:${ColorStubs.overrides.large.dark.colors.text.color}-400`,
       );
       expect(result).toContain(
-        `lg:dark:${ColorStubs.overrides.large.dark.colors.background.color}-400`
+        `lg:dark:${ColorStubs.overrides.large.dark.colors.background.color}-400`,
       );
     });
   });
