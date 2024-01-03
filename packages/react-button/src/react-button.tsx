@@ -1,6 +1,11 @@
 import type React from 'react'
 import classnames from 'classnames'
-import { ReactBaseComponent, getTextColorAttribute, getBackgroundColorAttribute, getActionColorAttribute } from '../../react-base-component'
+import {
+  ReactBaseComponent,
+  getTextColorAttribute,
+  getBackgroundColorAttribute,
+  getActionColorAttribute,
+} from '@phoenix_ui/react-base-component'
 
 import type { ButtonAttributes, ButtonProperties } from './react-button.types'
 import './react-button.css'
@@ -10,11 +15,13 @@ const Button: React.FC<ButtonProperties> = (properties) => {
     'button',
     properties.scale ?? 'medium',
     properties.rounded,
-    properties?.colors?.text != null && getTextColorAttribute(properties.colors.text),
-    properties.colors?.background != null && getBackgroundColorAttribute(properties.colors.background),
+    properties?.colors?.text != null &&
+      getTextColorAttribute(properties.colors.text),
+    properties.colors?.background != null &&
+      getBackgroundColorAttribute(properties.colors.background),
     properties.action != null && getActionColorAttribute(properties.action),
     properties.isFullWidth ?? false ? 'w-full' : '',
-    properties.className
+    properties.className,
   )
 
   const attributes: ButtonAttributes = {}
@@ -27,7 +34,7 @@ const Button: React.FC<ButtonProperties> = (properties) => {
     component: 'button',
     className: classNames,
     attributes,
-    properties
+    properties,
   })
 }
 
