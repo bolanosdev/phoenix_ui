@@ -1,13 +1,14 @@
 {
   "name": "@phoenix_ui/react-base-component",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "src/index.ts",
   "scripts": {
     "lint": "scripty",
     "test": "scripty"
   },
   "dependencies": {
-    "react": "^18"
+    "react": "^18",
+    "classnames": "^2.3.2"
   },
   "publishConfig": {
     "access": "public"
@@ -32,8 +33,5 @@
     "eslint-plugin-react": "^7.33.2",
     "typescript": "^5.3.3",
     "scripty": "2.1.1"
-  }, 
-  "peerDependencies": {
-    "classnames": "^2.3.2"
   }
 }
