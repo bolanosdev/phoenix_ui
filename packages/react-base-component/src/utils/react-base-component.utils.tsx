@@ -76,24 +76,22 @@ export const getActionColorAttribute = (action: ActionType) => {
     light: { text: { color: "text-black" }, background: { color: "bg-white" } },
     dark: { text: { color: "text-white" }, background: { color: "bg-black" } },
   };
-  // @ts-ignore
+
   return `${getTextColorAttribute(
-    actions[action].text
+    actions[action].text,
   )} ${getBackgroundColorAttribute(actions[action].background)}`;
 };
 
-export const getTextColorAttribute = ({
-  color = "text-slate",
-  weight = "400",
-}: TextColorType) => {
+export const getTextColorAttribute = (textColor?: TextColorType) => {
+  const { color = "text-blue", weight = "400" } = textColor;
   if (color === "text-white" || color === "text-black") return color;
   return color + "-" + weight;
 };
 
-export const getBackgroundColorAttribute = ({
-  color = "bg-slate",
-  weight = "400",
-}: BackgroundColorType) => {
+export const getBackgroundColorAttribute = (
+  backgroundColor?: BackgroundColorType,
+) => {
+  const { color = "bg-blue", weight = "400" } = backgroundColor;
   if (color === "bg-white" || color === "bg-black") return color;
   return color + "-" + weight;
 };
@@ -147,7 +145,7 @@ export const getProperties = (properties: ReactBaseComponentProperties) => {
 const getResponsiveClassName = (
   parentNames: string[],
   propertyName: string,
-  className: string
+  className: string,
 ): string => {
   if (
     (parentNames.find && parentNames.find((it) => it === "medium")) ||
@@ -165,7 +163,7 @@ const getResponsiveClassName = (
 const getDarkClassName = (
   parentNames: string[],
   propertyName: string,
-  className: string
+  className: string,
 ): string => {
   if (parentNames.includes("dark") || propertyName === "dark") {
     return `dark:${className}`;
@@ -176,7 +174,7 @@ const getDarkClassName = (
 const recusiveClassSearch = (
   activeProperty: ClassByResponsiveProps,
   propertyName: string,
-  parentNames: string[]
+  parentNames: string[],
 ) => {
   if (activeProperty === undefined) {
     return "";
@@ -195,19 +193,19 @@ const recusiveClassSearch = (
       const darkColorClass = getDarkClassName(
         parentNames,
         propertyName,
-        colorClass
+        colorClass,
       );
       return getResponsiveClassName(parentNames, propertyName, darkColorClass);
     }
 
     if (isBackgroundColor) {
       const colorClass = getBackgroundColorAttribute(
-        activeProperty as BackgroundColorType
+        activeProperty as BackgroundColorType,
       );
       const darkColorClass = getDarkClassName(
         parentNames,
         propertyName,
-        colorClass
+        colorClass,
       );
       return getResponsiveClassName(parentNames, propertyName, darkColorClass);
     }
@@ -218,7 +216,7 @@ const recusiveClassSearch = (
     return getResponsiveClassName(
       parentNames,
       propertyName,
-      `w-${activeProperty.value}`
+      `w-${activeProperty.value}`,
     );
   }
 
@@ -227,7 +225,7 @@ const recusiveClassSearch = (
     return getResponsiveClassName(
       parentNames,
       propertyName,
-      `h-${activeProperty.value}`
+      `h-${activeProperty.value}`,
     );
   }
 
@@ -243,7 +241,7 @@ const recusiveClassSearch = (
     classes += recusiveClassSearch(
       activeProperty[childPropertyName],
       childPropertyName,
-      [propertyName, ...parentNames]
+      [propertyName, ...parentNames],
     );
   });
   return classes;
